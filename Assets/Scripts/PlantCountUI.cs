@@ -8,6 +8,14 @@ public class PlantCountUI : MonoBehaviour
 
     public void UpdateSeeds (int seedsLeft, int seedsPlanted)
     {
-        
+        if (_plantedText != null && _remainingText != null)
+        {
+            _plantedText.text = $"{seedsPlanted}";
+            _remainingText.text = $"{seedsLeft}";
+        }
+        else
+        {
+            Debug.LogError("PointsText reference is missing!");
+        }
     }
 }
